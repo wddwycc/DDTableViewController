@@ -45,7 +45,7 @@ class ImageCell: UITableViewCell {
 extension ImageCell: Updatable {
     typealias ViewData = ImageCellViewData
     func updateWithViewData(viewData: ViewData) {
-        self.mainImageView.image = viewData.image
+        self.imageView!.image = viewData.image
     }
     static var height: CGFloat{
         return 200

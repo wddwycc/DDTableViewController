@@ -101,3 +101,33 @@ tableVC.tableView.reloadData()
 func scrollToBottom(animated animated:Bool)
 func scrollToTop(animated animated:Bool)
 ```
+
+## Best Practices
+
+#### Load Web image In Cell Asynchronously
+I recommend to use [Kingfisher](https://github.com/onevcat/Kingfisher) to Simplify Cell Logic
+
+```swift
+func updateWithViewData(viewData: ViewData) {
+    ...
+
+    imageView.kf_setImageWithURL(NSURL(string: viewData.imageURL)!,
+                                 placeholderImage: nil,
+                                 optionsInfo: nil,
+                                 progressBlock: { (receivedSize, totalSize) -> () in
+                                    print("Download Progress: \(receivedSize)/\(totalSize)")
+        },
+                                 completionHandler: { (image, error, cacheType, imageURL) -> () in
+                                    print("Downloaded and set!")
+        }
+    )
+}
+
+// when cell disappear, cancel the download task and later presentation.
+override func prepareForReuse() {
+    super.prepareForReuse()
+    imageView.kf_cancelDownloadTask()
+}
+
+
+```
