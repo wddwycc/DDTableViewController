@@ -45,7 +45,8 @@ extension CustomCell: Updatable {
 }
 ```
 
-Then,forget about all `UITableView` delegate methods,use `DDTableViewController`:
+Use `[Array<CellConfiguratorType>]` as the model layer. Forget about all `UITableView` delegate methods, `CellConfiguratorType` will handle it all automatically.  
+use `DDTableViewController` to initialize the table:
 
 ```swift
 let cellConfigurators:[Array<CellConfiguratorType>] = [
@@ -75,19 +76,14 @@ tableVC.didMoveToParentViewController(self)
 
 ## Other APIs
 
-#### Insert Cell
+#### Insert/Delete Cell
 
 ```swift
 func insertCellAtIndexPath(indexPath indexPath:NSIndexPath, withCellConfigurator cellConfigurator:CellConfiguratorType, RowAnimation animation:UITableViewRowAnimation)
-```
-
-#### Delete Cell
-
-```swift
 func deleteCellAtIndexPath(indexPath indexPath:NSIndexPath, withRowAnimation animation:UITableViewRowAnimation)
 ```
 
-#### Reload
+#### Reload Table
 
 ```swift
 // Manually manipulate the model layer
