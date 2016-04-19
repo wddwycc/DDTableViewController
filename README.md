@@ -72,7 +72,7 @@ tableVC.didMoveToParentViewController(self)
 **Mission Complete!** (See example in Demo folder)
 
 
-## Complete API
+## Other APIs
 
 #### Insert Cell
 
