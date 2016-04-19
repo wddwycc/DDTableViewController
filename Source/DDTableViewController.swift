@@ -36,7 +36,7 @@ public class DDTableViewController: UITableViewController {
         self.tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: targetRow, inSection: targetSection)], withRowAnimation: animation)
     }
     /// Delete Cell
-    public func deleteCellAtIndexPath(indexPath indexPath:NSIndexPath, withCellConfigurator cellConfigurator:CellConfiguratorType, withRowAnimation animation:UITableViewRowAnimation){
+    public func deleteCellAtIndexPath(indexPath indexPath:NSIndexPath, withRowAnimation animation:UITableViewRowAnimation){
         let targetSection = min(max(indexPath.section, 0), self.cellConfigurators.count - 1)
         let targetRow = min(max(indexPath.row, 0), self.cellConfigurators[targetSection].count - 1)
         

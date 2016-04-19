@@ -53,7 +53,7 @@ class ViewController: UIViewController {
         let imageCellViewData = ImageCellViewData(image: UIImage(named: "sample.png")!)
         let configurator = CellConfigurator<ImageCell>(viewData: imageCellViewData, initFromNib: false)
         
-        self.tableVC.insertCellatIndexPath(indexPath: NSIndexPath(forRow: 0, inSection: 2), withCellConfigurator: configurator, RowAnimation: .Fade)
+        self.tableVC.insertCellAtIndexPath(indexPath: NSIndexPath(forRow: 0, inSection: 0), withCellConfigurator: configurator, RowAnimation: .Fade)
         
     }
 

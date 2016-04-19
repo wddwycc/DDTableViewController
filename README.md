@@ -74,7 +74,7 @@ func insertCellAtIndexPath(indexPath indexPath:NSIndexPath, withCellConfigurator
 #### Delete Cell
 
 ```swift
-func deleteCellAtIndexPath(indexPath indexPath:NSIndexPath, withCellConfigurator cellConfigurator:CellConfiguratorType, withRowAnimation animation:UITableViewRowAnimation)
+func deleteCellAtIndexPath(indexPath indexPath:NSIndexPath, withRowAnimation animation:UITableViewRowAnimation)
 ```
 
 #### Reload
