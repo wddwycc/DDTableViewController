@@ -9,7 +9,7 @@
 import UIKit
 
 
-protocol Updatable {
+public protocol Updatable {
     associatedtype ViewData
     func updateWithViewData(viewData: ViewData)
     static var height:CGFloat {get}
@@ -26,16 +26,16 @@ public protocol CellConfiguratorType{
     var initFromNib:Bool { get set }
 }
 
-struct CellConfigurator<Cell where Cell: Updatable, Cell: UITableViewCell>:CellConfiguratorType{
-    internal let reuseIdentifier: String = NSStringFromClass(Cell)
-    internal let cellClass: AnyClass = Cell.self
-    internal let height: CGFloat = Cell.height
+public struct CellConfigurator<Cell where Cell: Updatable, Cell: UITableViewCell>:CellConfiguratorType{
+    public let reuseIdentifier: String = NSStringFromClass(Cell)
+    public let cellClass: AnyClass = Cell.self
+    public let height: CGFloat = Cell.height
     
     var viewData: Cell.ViewData
     
-    var initFromNib: Bool
+    public var initFromNib: Bool
     
-    func updateCell(cell: UITableViewCell) {
+    public func updateCell(cell: UITableViewCell) {
         if let cell = cell as? Cell {
             cell.updateWithViewData(viewData)
         }
