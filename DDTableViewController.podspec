@@ -39,8 +39,8 @@ Pod::Spec.new do |s|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  s.license      = "MIT"
-  # s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
+  # s.license      = "MIT"
+  s.license      = { :type => "MIT", :file => "LICENSE" }
 
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -56,7 +56,7 @@ Pod::Spec.new do |s|
   s.author             = { "闻端Carl" => "wddwyss@gmail.com" }
   # Or just: s.author    = "闻端Carl"
   # s.authors            = { "闻端Carl" => "wddwyss@gmail.com" }
-  s.social_media_url   = "http://twitter.com/wddwycc"
+  s.social_media_url   = "https://twitter.com/wddwycc"
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -80,7 +80,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/wddwycc/DDTableViewController", :tag => "0.0.1" }
+  s.source       = { :git => "https://github.com/wddwycc/DDTableViewController.git", :tag => "0.0.1" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
