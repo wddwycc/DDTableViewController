@@ -5,12 +5,12 @@ It's lifetime mission for iOS developers to optimize the use of UITableView. For
 
 ## Install
 
-### Manually
+#### Manual
 Drop to files in `Source`folder into your project.
 
 
 ## Use it
-Adopt the protocol `Updatable` for all your `UITableViewCell` subclasses. Follow this format to implement in your cell file:
+Adopt the protocol `Updatable` for all your `UITableViewCell` subclasses. Follow this format:
 
 
 ```swift
@@ -37,7 +37,7 @@ extension CustomCell: Updatable {
 
 Then,forget about all `UITableView` delegate methods,use `DDTableViewController`:
 
-```
+```swift
 let cellConfigurators:[Array<CellConfiguratorType>] = [
     // section 0
     [
@@ -60,7 +60,7 @@ tableVC.didMoveToParentViewController(self)
 ```
 
 
-**Mission Complete!**
+**Mission Complete!** (See example in Demo folder)
 
 
 ## Complete API
