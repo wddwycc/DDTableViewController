@@ -14,6 +14,8 @@ Adopt the protocol `Updatable` for all your `UITableViewCell` subclasses. Follow
 
 
 ```swift
+import DDTableViewController
+
 class CustomCell:UITableViewCell{
     ...
 }
