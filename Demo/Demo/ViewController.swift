@@ -24,7 +24,7 @@ class ViewController: UIViewController {
                 // section 0 row 0
                 CellConfigurator<ImageCell>(viewData: ImageCellViewData(image: UIImage(named: "sample.png")!), initFromNib: false),
                 // section 0 row 1
-                CellConfigurator<TextCell>(viewData: TextCellViewData(text: "Hello World"), initFromNib: false)
+//                CellConfigurator<TextCell>(viewData: TextCellViewData(text: "Hello World"), initFromNib: false)
             ],
             //section 1
             [
@@ -48,8 +48,8 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     @IBAction func didPressAddCell(sender: AnyObject) {
-        let imageCellViewData = ImageCellViewData(image: UIImage(named: "sample.png")!)
-        let configurator = CellConfigurator<ImageCell>(viewData: imageCellViewData, initFromNib: false)
+//        let imageCellViewData = ImageCellViewData(image: UIImage(named: "sample.png")!)
+        let configurator = CellConfigurator<TextCell>(viewData: TextCellViewData(text: "Hello World"), initFromNib: false)
         self.tableVC.insertCellAtIndexPath(indexPath: NSIndexPath(forRow: 0, inSection: 0), withCellConfigurator: configurator, RowAnimation: .Fade)
         
         

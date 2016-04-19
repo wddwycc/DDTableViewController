@@ -14,7 +14,11 @@ public class DDTableViewController: UITableViewController {
     }
 
     // Model
-    public var cellConfigurators = [Array<CellConfiguratorType>]()
+    public var cellConfigurators = [Array<CellConfiguratorType>](){
+        didSet{
+            self.registerCells()
+        }
+    }
     
     
     // MARK: Public
@@ -31,7 +35,6 @@ public class DDTableViewController: UITableViewController {
         let targetRow = min(max(indexPath.row, 0), self.cellConfigurators[targetSection].count)
         
         self.cellConfigurators[targetSection].insert(cellConfigurator, atIndex: targetRow)
-        self.registerCells()
         self.tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: targetRow, inSection: targetSection)], withRowAnimation: animation)
     }
     /// Delete Cell
