@@ -93,3 +93,10 @@ func deleteCellAtIndexPath(indexPath indexPath:NSIndexPath, withRowAnimation ani
 tableVC.cellConfigurators.append(...)
 tableVC.tableView.reloadData()
 ```
+
+#### Scroll
+
+```swift
+func scrollToBottom(animated animated:Bool)
+func scrollToTop(animated animated:Bool)
+```

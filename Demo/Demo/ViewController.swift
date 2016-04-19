@@ -28,7 +28,7 @@ class ViewController: UIViewController {
             ],
             //section 1
             [
-                CellConfigurator<ImageCell>(viewData: ImageCellViewData(image: UIImage(named: "sample2.png")!), initFromNib: false)
+                CellConfigurator<ImageCell>(viewData: ImageCellViewData(image: UIImage(named: "sample.png")!), initFromNib: false)
             ]
             // ...
         ]
@@ -47,13 +47,21 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        super.touchesBegan(touches, withEvent: event)
-        
+    @IBAction func didPressAddCell(sender: AnyObject) {
         let imageCellViewData = ImageCellViewData(image: UIImage(named: "sample.png")!)
         let configurator = CellConfigurator<ImageCell>(viewData: imageCellViewData, initFromNib: false)
-        
         self.tableVC.insertCellAtIndexPath(indexPath: NSIndexPath(forRow: 0, inSection: 0), withCellConfigurator: configurator, RowAnimation: .Fade)
+        
+        
+    }
+    @IBAction func didPressScrollToBottom(sender: AnyObject) {
+        self.tableVC.scrollToBottom(animated: true)
+    }
+    @IBAction func didPressScrollToTop(sender: AnyObject) {
+        self.tableVC.scrollToTop(animated: true)
+    }
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        super.touchesBegan(touches, withEvent: event)
         
     }
 

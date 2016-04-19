@@ -16,7 +16,38 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vtr-uG-mIR">
+                                <rect key="frame" x="247" y="562" width="106" height="30"/>
+                                <state key="normal" title="ScrollToBottom"/>
+                                <connections>
+                                    <action selector="didPressScrollToBottom:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ar6-EJ-Gnk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QYe-rK-aXA">
+                                <rect key="frame" x="271" y="524" width="58" height="30"/>
+                                <state key="normal" title="Add Cell"/>
+                                <connections>
+                                    <action selector="didPressAddCell:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ztn-p5-DhJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="84m-kK-K1w">
+                                <rect key="frame" x="383" y="562" width="80" height="30"/>
+                                <state key="normal" title="ScrollToTop"/>
+                                <connections>
+                                    <action selector="didPressScrollToTop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cZM-In-X2b"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="84m-kK-K1w" firstAttribute="centerY" secondItem="vtr-uG-mIR" secondAttribute="centerY" id="4Tj-6t-ovf"/>
+                            <constraint firstItem="vtr-uG-mIR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6HY-KB-W15"/>
+                            <constraint firstItem="QYe-rK-aXA" firstAttribute="centerX" secondItem="vtr-uG-mIR" secondAttribute="centerX" id="HOY-rp-DvI"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="vtr-uG-mIR" secondAttribute="bottom" constant="8" id="gqD-oH-VSH"/>
+                            <constraint firstItem="vtr-uG-mIR" firstAttribute="top" secondItem="QYe-rK-aXA" secondAttribute="bottom" constant="8" id="l3G-Ur-9rZ"/>
+                            <constraint firstItem="84m-kK-K1w" firstAttribute="leading" secondItem="vtr-uG-mIR" secondAttribute="trailing" constant="30" id="mxt-M5-W4o"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

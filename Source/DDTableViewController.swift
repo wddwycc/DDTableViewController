@@ -22,7 +22,6 @@ public class DDTableViewController: UITableViewController {
         super.init(style: UITableViewStyle.Plain)
         self.cellConfigurators = cellConfigurators
         self.registerCells()
-        
     }
     
     
@@ -44,7 +43,23 @@ public class DDTableViewController: UITableViewController {
         self.tableView.deleteRowsAtIndexPaths([NSIndexPath(forRow: targetRow, inSection: targetSection)], withRowAnimation: animation)
     }
     
+    /// Scroll To Bottom
+    public func scrollToBottom(animated animated:Bool){
+        if(self.cellConfigurators.count == 0){return}
+        var currentSectionIndex = self.cellConfigurators.count - 1
+        while self.cellConfigurators[currentSectionIndex].count == 0 {
+            currentSectionIndex -= 1
+            if(currentSectionIndex < 0){return}
+        }
+        let targetSectionIndex = currentSectionIndex
+        let bottomIndexPath = NSIndexPath(forRow: self.cellConfigurators[targetSectionIndex].count - 1, inSection: targetSectionIndex)
+        self.tableView.scrollToRowAtIndexPath(bottomIndexPath, atScrollPosition: UITableViewScrollPosition.Top, animated: animated)
+    }
     
+    /// Scroll To Top
+    public func scrollToTop(animated animated:Bool){
+        self.tableView.setContentOffset(CGPointMake(0, 0), animated: animated)
+    }
     
     // MARK: Private
     private func registerCells(){
