@@ -13,7 +13,7 @@ pod 'DDTableViewController'
 ```
 
 #### Manual
-Drop to files in `Source`folder into your project.
+Drop files in `Source`folder into your project.
 
 
 ## Use it
