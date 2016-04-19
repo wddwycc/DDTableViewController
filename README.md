@@ -1,7 +1,7 @@
 # DDTableViewController
 
 
-It's lifetime mission for iOS developers to optimize the use of UITableView. Fortunately, I managed a brilliant way to use it inspired by [Arkadiusz Holko's Article](http://holko.pl/2016/01/05/typed-table-view-controller/)
+It's lifetime mission for iOS developers to optimize the use of UITableView. Fortunately, I managed a brilliant and straightforward way to use it inspired by [Arkadiusz Holko's Article](http://holko.pl/2016/01/05/typed-table-view-controller/)
 
 ## Install
 
@@ -13,7 +13,7 @@ pod 'DDTableViewController'
 ```
 
 #### Manual
-Drop files in `Source`folder into your project.
+Drop files in `Source` folder into your project.
 
 
 ## Use it
