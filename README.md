@@ -1,5 +1,6 @@
 # DDTableViewController
-
+[![CocoaPods](https://img.shields.io/cocoapods/v/DDTableViewController.svg?maxAge=2592000)](https://cocoapods.org/?q=ddtableviewcontroller)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/wddwycc/DDTableViewController/master/LICENSE)
 
 It's lifetime mission for iOS developers to optimize the use of UITableView. Fortunately, I managed a brilliant and straightforward way to use it inspired by [Arkadiusz Holko's Article](http://holko.pl/2016/01/05/typed-table-view-controller/)
 
