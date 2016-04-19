@@ -5,6 +5,13 @@ It's lifetime mission for iOS developers to optimize the use of UITableView. For
 
 ## Install
 
+#### CocoaPods
+
+```ruby
+use_frameworks!
+pod 'DDTableViewController'
+```
+
 #### Manual
 Drop to files in `Source`folder into your project.
 
