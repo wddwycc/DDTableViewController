@@ -45,9 +45,8 @@ extension CustomCell: Updatable {
     func updateWithViewData(viewData: ViewData) {
         // Decorate your cell with the viewData
     }
-    static var height: CGFloat{
-        // Return the height of your cell here
-        return 200
+    static func heightWithViewData(viewData: ViewData) -> CGFloat {
+        return 60
     }
 }
 ```

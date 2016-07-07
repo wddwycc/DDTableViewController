@@ -12,7 +12,7 @@ import UIKit
 public protocol Updatable {
     associatedtype ViewData
     func updateWithViewData(viewData: ViewData)
-    static var height:CGFloat {get}
+    static func heightWithViewData(viewData: ViewData) -> CGFloat
 }
 
 public protocol CellConfiguratorType{
@@ -20,17 +20,15 @@ public protocol CellConfiguratorType{
     var cellClass: AnyClass { get }
     var height:CGFloat { get }
     func updateCell(cell: UITableViewCell)
-    
-    
-    
     var initFromNib:Bool { get set }
 }
 
 public struct CellConfigurator<Cell where Cell: Updatable, Cell: UITableViewCell>: CellConfiguratorType{
     public let reuseIdentifier: String = NSStringFromClass(Cell)
     public let cellClass: AnyClass = Cell.self
-    public let height: CGFloat = Cell.height
-    
+    public var height: CGFloat {
+        return Cell.heightWithViewData(viewData)
+    }
     var viewData: Cell.ViewData
     
     public var initFromNib: Bool
