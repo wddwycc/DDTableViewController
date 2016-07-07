@@ -6,7 +6,7 @@ It's lifetime mission for iOS developers to optimize the use of UITableView. For
 This approach allows crafting a tableView with different kind of cells much easier and faster.
 
 
-Here is how you define initialize a full feature UITableView
+Here is how you initialize a full feature UITableView
 
 ```swift
 import DDTableViewController
