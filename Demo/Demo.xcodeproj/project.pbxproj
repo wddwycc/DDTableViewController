@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07B377FF1D2E190A00583968 /* DDTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 07B377FE1D2E190A00583968 /* DDTableViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		07B378031D2E190A00583968 /* DDTableViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07B377FC1D2E190A00583968 /* DDTableViewController.framework */; };
+		07B378041D2E190A00583968 /* DDTableViewController.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 07B377FC1D2E190A00583968 /* DDTableViewController.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		07B378091D2E191500583968 /* Updatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A36E7C1CC52F5300A855FB /* Updatable.swift */; };
+		07B3780A1D2E191500583968 /* DDTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A36E781CC52CB900A855FB /* DDTableViewController.swift */; };
 		84A36E671CC52C8000A855FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A36E661CC52C8000A855FB /* AppDelegate.swift */; };
 		84A36E691CC52C8000A855FB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A36E681CC52C8000A855FB /* ViewController.swift */; };
 		84A36E6C1CC52C8000A855FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A36E6A1CC52C8000A855FB /* Main.storyboard */; };
@@ -19,7 +24,34 @@
 		84A36E861CC5D08600A855FB /* sample.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A36E851CC5D08600A855FB /* sample.png */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		07B378011D2E190A00583968 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84A36E5B1CC52C8000A855FB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 07B377FB1D2E190A00583968;
+			remoteInfo = DDTableViewController;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		07B378081D2E190A00583968 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				07B378041D2E190A00583968 /* DDTableViewController.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		07B377FC1D2E190A00583968 /* DDTableViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DDTableViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		07B377FE1D2E190A00583968 /* DDTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDTableViewController.h; sourceTree = "<group>"; };
+		07B378001D2E190A00583968 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84A36E631CC52C8000A855FB /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84A36E661CC52C8000A855FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84A36E681CC52C8000A855FB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,21 +67,39 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		84A36E601CC52C8000A855FB /* Frameworks */ = {
+		07B377F81D2E190A00583968 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		84A36E601CC52C8000A855FB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07B378031D2E190A00583968 /* DDTableViewController.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07B377FD1D2E190A00583968 /* DDTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				07B377FE1D2E190A00583968 /* DDTableViewController.h */,
+				07B378001D2E190A00583968 /* Info.plist */,
+			);
+			path = DDTableViewController;
+			sourceTree = "<group>";
+		};
 		84A36E5A1CC52C8000A855FB = {
 			isa = PBXGroup;
 			children = (
 				84A36E801CC5331F00A855FB /* Source */,
 				84A36E651CC52C8000A855FB /* Demo */,
+				07B377FD1D2E190A00583968 /* DDTableViewController */,
 				84A36E641CC52C8000A855FB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -58,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				84A36E631CC52C8000A855FB /* Demo.app */,
+				07B377FC1D2E190A00583968 /* DDTableViewController.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -89,7 +140,36 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		07B377F91D2E190A00583968 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07B377FF1D2E190A00583968 /* DDTableViewController.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		07B377FB1D2E190A00583968 /* DDTableViewController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 07B378071D2E190A00583968 /* Build configuration list for PBXNativeTarget "DDTableViewController" */;
+			buildPhases = (
+				07B377F71D2E190A00583968 /* Sources */,
+				07B377F81D2E190A00583968 /* Frameworks */,
+				07B377F91D2E190A00583968 /* Headers */,
+				07B377FA1D2E190A00583968 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DDTableViewController;
+			productName = DDTableViewController;
+			productReference = 07B377FC1D2E190A00583968 /* DDTableViewController.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		84A36E621CC52C8000A855FB /* Demo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84A36E751CC52C8000A855FB /* Build configuration list for PBXNativeTarget "Demo" */;
@@ -97,10 +177,12 @@
 				84A36E5F1CC52C8000A855FB /* Sources */,
 				84A36E601CC52C8000A855FB /* Frameworks */,
 				84A36E611CC52C8000A855FB /* Resources */,
+				07B378081D2E190A00583968 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				07B378021D2E190A00583968 /* PBXTargetDependency */,
 			);
 			name = Demo;
 			productName = Demo;
@@ -117,6 +199,9 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "monk-studio";
 				TargetAttributes = {
+					07B377FB1D2E190A00583968 = {
+						CreatedOnToolsVersion = 7.3;
+					};
 					84A36E621CC52C8000A855FB = {
 						CreatedOnToolsVersion = 7.3;
 					};
@@ -136,11 +221,19 @@
 			projectRoot = "";
 			targets = (
 				84A36E621CC52C8000A855FB /* Demo */,
+				07B377FB1D2E190A00583968 /* DDTableViewController */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		07B377FA1D2E190A00583968 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		84A36E611CC52C8000A855FB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -155,6 +248,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		07B377F71D2E190A00583968 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07B378091D2E191500583968 /* Updatable.swift in Sources */,
+				07B3780A1D2E191500583968 /* DDTableViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		84A36E5F1CC52C8000A855FB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -169,6 +271,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		07B378021D2E190A00583968 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 07B377FB1D2E190A00583968 /* DDTableViewController */;
+			targetProxy = 07B378011D2E190A00583968 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		84A36E6A1CC52C8000A855FB /* Main.storyboard */ = {
@@ -190,6 +300,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		07B378051D2E190A00583968 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = DDTableViewController/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.monk-studio.DDTableViewController";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		07B378061D2E190A00583968 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = DDTableViewController/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.monk-studio.DDTableViewController";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		84A36E731CC52C8000A855FB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -277,6 +427,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = Demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.monk-studio.Demo";
@@ -288,6 +439,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = Demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.monk-studio.Demo";
@@ -298,6 +450,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		07B378071D2E190A00583968 /* Build configuration list for PBXNativeTarget "DDTableViewController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07B378051D2E190A00583968 /* Debug */,
+				07B378061D2E190A00583968 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		84A36E5E1CC52C8000A855FB /* Build configuration list for PBXProject "Demo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -314,6 +474,7 @@
 				84A36E771CC52C8000A855FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

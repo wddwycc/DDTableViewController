@@ -47,7 +47,7 @@ extension ImageCell: Updatable {
     func updateWithViewData(viewData: ViewData) {
         self.imageView!.image = viewData.image
     }
-    static var height: CGFloat{
+    static func heightWithViewData(viewData: ViewData) -> CGFloat {
         return 200
     }
 }

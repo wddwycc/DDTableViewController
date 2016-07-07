@@ -43,7 +43,7 @@ extension TextCell: Updatable {
     func updateWithViewData(viewData: ViewData) {
         self.label.text = viewData.text
     }
-    static var height: CGFloat{
+    static func heightWithViewData(viewData: ViewData) -> CGFloat {
         return 60
     }
 }
