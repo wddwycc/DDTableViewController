@@ -27,6 +27,11 @@ Adopt the protocol `Updatable` for all your `UITableViewCell` subclasses. Follow
 import DDTableViewController
 
 class CustomCell:UITableViewCell{
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        ...
+    }
+
     ...
 }
 

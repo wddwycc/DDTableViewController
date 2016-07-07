@@ -16,16 +16,24 @@ public class DDTableViewController: UITableViewController {
     // Model
     public var cellConfigurators = [Array<CellConfiguratorType>](){
         didSet{
+            if self.cellConfigurators.count == 0 {
+                self.cellConfigurators.append(Array<CellConfiguratorType>())
+            }
             self.registerCells()
         }
     }
     
+    public var clickHandler: ((indexPath: NSIndexPath, configurator: CellConfiguratorType)->())?
     
     // MARK: Public
     public init(cellConfigurators:[Array<CellConfiguratorType>]){
         super.init(style: UITableViewStyle.Plain)
         self.cellConfigurators = cellConfigurators
         self.registerCells()
+    }
+    
+    init() {
+        super.init(style: UITableViewStyle.Plain)
     }
     
     
@@ -96,5 +104,8 @@ extension DDTableViewController{
     override public func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         let currentConfigurator = self.cellConfigurators[indexPath.section][indexPath.row]
         return currentConfigurator.height
+    }
+    public override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        clickHandler?(indexPath: indexPath, configurator: self.cellConfigurators[indexPath.section][indexPath.row])
     }
 }

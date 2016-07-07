@@ -26,7 +26,7 @@ public protocol CellConfiguratorType{
     var initFromNib:Bool { get set }
 }
 
-public struct CellConfigurator<Cell where Cell: Updatable, Cell: UITableViewCell>:CellConfiguratorType{
+public struct CellConfigurator<Cell where Cell: Updatable, Cell: UITableViewCell>: CellConfiguratorType{
     public let reuseIdentifier: String = NSStringFromClass(Cell)
     public let cellClass: AnyClass = Cell.self
     public let height: CGFloat = Cell.height
