@@ -5,28 +5,32 @@ It's lifetime mission for iOS developers to optimize the use of UITableView. For
 
 This approach allows crafting a tableView with different kind of cells much easier and faster.
 
-## Install
 
-#### CocoaPods
+Here is how you define initialize a full feature UITableView
 
-```ruby
-use_frameworks!
-pod 'DDTableViewController'
+```swift
+let cellConfigurators:[Array<CellConfiguratorType>] = [
+    // section 0
+    [
+        // section 0 row 0
+        CellConfigurator<ImageCell>(viewData: ImageCellViewData(image: UIImage(named: "sample.png")!), initFromNib: false),
+        // section 0 row 1
+        CellConfigurator<TextCell>(viewData: TextCellViewData(text: "Hello World"), initFromNib: false)
+    ],
+    //section 1
+    [
+        CellConfigurator<ImageCell>(viewData: ImageCellViewData(image: UIImage(named: "sample2.png")!), initFromNib: false)
+    ]
+    // ...
+]
+
+let tableVC = DDTableViewController(cellConfigurators: cellConfigurators)
+self.addChildViewController(tableVC)
+self.view.addSubview(tableVC.view)
+tableVC.didMoveToParentViewController(self)
 ```
 
-#### Carthage
-
-```sh
-git "https://github.com/wddwycc/DDTableViewController" "master"
-```
-
-#### Manual
-Drop files in `Source` folder into your project.
-
-
-## Use it
-Adopt the protocol `Updatable` for all your `UITableViewCell` subclasses. Follow this format:
-
+Adopt the protocol `Updatable` for all your `UITableViewCell` subclasses:
 
 ```swift
 import DDTableViewController
@@ -56,33 +60,25 @@ extension CustomCell: Updatable {
 }
 ```
 
-Use `[Array<CellConfiguratorType>]` as the model layer. Forget about all `UITableView` delegate methods, `CellConfiguratorType` will handle it all automatically.  
-use `DDTableViewController` to initialize the table:
 
-```swift
-let cellConfigurators:[Array<CellConfiguratorType>] = [
-    // section 0
-    [
-        // section 0 row 0
-        CellConfigurator<ImageCell>(viewData: ImageCellViewData(image: UIImage(named: "sample.png")!), initFromNib: false),
-        // section 0 row 1
-        CellConfigurator<TextCell>(viewData: TextCellViewData(text: "Hello World"), initFromNib: false)
-    ],
-    //section 1
-    [
-        CellConfigurator<ImageCell>(viewData: ImageCellViewData(image: UIImage(named: "sample2.png")!), initFromNib: false)
-    ]
-    // ...
-]
 
-let tableVC = DDTableViewController(cellConfigurators: cellConfigurators)
-self.addChildViewController(tableVC)
-self.view.addSubview(tableVC.view)
-tableVC.didMoveToParentViewController(self)
+## Install
+
+#### CocoaPods
+
+```ruby
+use_frameworks!
+pod 'DDTableViewController'
 ```
 
+#### Carthage
 
-**Mission Complete!** (See example in Demo folder)
+```sh
+git "https://github.com/wddwycc/DDTableViewController" "master"
+```
+
+#### Manual
+Drop files in `Source` folder into your project.
 
 
 ## Other APIs
