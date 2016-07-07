@@ -38,4 +38,9 @@ public struct CellConfigurator<Cell where Cell: Updatable, Cell: UITableViewCell
             cell.updateWithViewData(viewData)
         }
     }
+
+    public init(viewData: Cell.ViewData, initFromNib: Bool) {
+        self.viewData = viewData
+        self.initFromNib = initFromNib
+    }
 }
