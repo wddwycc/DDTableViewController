@@ -9,6 +9,8 @@ This approach allows crafting a tableView with different kind of cells much easi
 Here is how you define initialize a full feature UITableView
 
 ```swift
+import DDTableViewController
+
 let cellConfigurators:[Array<CellConfiguratorType>] = [
     // section 0
     [
@@ -25,16 +27,11 @@ let cellConfigurators:[Array<CellConfiguratorType>] = [
 ]
 
 let tableVC = DDTableViewController(cellConfigurators: cellConfigurators)
-self.addChildViewController(tableVC)
-self.view.addSubview(tableVC.view)
-tableVC.didMoveToParentViewController(self)
 ```
 
 Adopt the protocol `Updatable` for all your `UITableViewCell` subclasses:
 
 ```swift
-import DDTableViewController
-
 class CustomCell:UITableViewCell{
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
