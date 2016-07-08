@@ -102,7 +102,7 @@ extension DDTableViewController{
         return cell
     }
     override public func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        let currentConfigurator = self.cellConfigurators[indexPath.section][indexPath.row]
+        var currentConfigurator = self.cellConfigurators[indexPath.section][indexPath.row]
         return currentConfigurator.height
     }
     public override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

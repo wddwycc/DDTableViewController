@@ -15,10 +15,10 @@ public protocol Updatable {
     static func heightWithViewData(viewData: ViewData) -> CGFloat
 }
 
-public protocol CellConfiguratorType{
+public protocol CellConfiguratorType {
     var reuseIdentifier: String { get }
     var cellClass: AnyClass { get }
-    var height:CGFloat { get }
+    var height:CGFloat { mutating get }
     func updateCell(cell: UITableViewCell)
     var initFromNib:Bool { get set }
 }
@@ -26,12 +26,22 @@ public protocol CellConfiguratorType{
 public struct CellConfigurator<Cell where Cell: Updatable, Cell: UITableViewCell>: CellConfiguratorType{
     public let reuseIdentifier: String = NSStringFromClass(Cell)
     public let cellClass: AnyClass = Cell.self
-    public var height: CGFloat {
-        return Cell.heightWithViewData(viewData)
-    }
     var viewData: Cell.ViewData
-    
     public var initFromNib: Bool
+    
+    // Height
+    private var cachedHeight: CGFloat?
+    public var height: CGFloat {
+        mutating get {
+            if let cachedHeight = self.cachedHeight {
+                return cachedHeight
+            } else {
+                let height = Cell.heightWithViewData(viewData)
+                self.cachedHeight = height
+                return height
+            }
+        }
+    }
     
     public func updateCell(cell: UITableViewCell) {
         if let cell = cell as? Cell {
