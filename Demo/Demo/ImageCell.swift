@@ -42,7 +42,7 @@ class ImageCell: UITableViewCell {
 
 }
 
-extension ImageCell: Updatable {
+extension ImageCell: DDUpdatable {
     typealias ViewData = ImageCellViewData
     func updateWithViewData(viewData: ViewData) {
         self.imageView!.image = viewData.image

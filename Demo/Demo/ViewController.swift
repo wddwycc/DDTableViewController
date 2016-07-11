@@ -16,19 +16,19 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         
-        
+        DDCellConfigurator<TextCell>(viewData: TextCellViewData(text: "xx"))
         
         let cellConfigurators:[Array<CellConfiguratorType>] = [
             // section 0
             [
                 // section 0 row 0
-                CellConfigurator<ImageCell>(viewData: ImageCellViewData(image: UIImage(named: "sample.png")!), initFromNib: false),
+                DDCellConfigurator<ImageCell>(viewData: ImageCellViewData(image: UIImage(named: "sample.png")!), initFromNib: false),
                 // section 0 row 1
 //                CellConfigurator<TextCell>(viewData: TextCellViewData(text: "Hello World"), initFromNib: false)
             ],
             //section 1
             [
-                CellConfigurator<ImageCell>(viewData: ImageCellViewData(image: UIImage(named: "sample.png")!), initFromNib: false)
+                DDCellConfigurator<ImageCell>(viewData: ImageCellViewData(image: UIImage(named: "sample.png")!), initFromNib: false)
             ]
             // ...
         ]

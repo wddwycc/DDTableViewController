@@ -14,19 +14,19 @@ public class DDTableViewController: UITableViewController {
     }
 
     // Model
-    public var cellConfigurators = [Array<CellConfiguratorType>](){
+    public var cellConfigurators = [Array<DDCellConfiguratorType>](){
         didSet{
             if self.cellConfigurators.count == 0 {
-                self.cellConfigurators.append(Array<CellConfiguratorType>())
+                self.cellConfigurators.append(Array<DDCellConfiguratorType>())
             }
             self.registerCells()
         }
     }
     
-    public var clickHandler: ((indexPath: NSIndexPath, configurator: CellConfiguratorType)->())?
+    public var clickHandler: ((indexPath: NSIndexPath, configurator: DDCellConfiguratorType)->())?
     
     // MARK: Public
-    public init(cellConfigurators:[Array<CellConfiguratorType>]){
+    public init(cellConfigurators:[Array<DDCellConfiguratorType>]){
         super.init(style: UITableViewStyle.Plain)
         self.cellConfigurators = cellConfigurators
         self.registerCells()
@@ -38,7 +38,7 @@ public class DDTableViewController: UITableViewController {
     
     
     /// Insert Cell
-    public func insertCellAtIndexPath(indexPath indexPath:NSIndexPath, withCellConfigurator cellConfigurator:CellConfiguratorType, RowAnimation animation:UITableViewRowAnimation){
+    public func insertCellAtIndexPath(indexPath indexPath:NSIndexPath, withCellConfigurator cellConfigurator:DDCellConfiguratorType, RowAnimation animation:UITableViewRowAnimation){
         let targetSection = min(max(indexPath.section, 0), self.cellConfigurators.count - 1)
         let targetRow = min(max(indexPath.row, 0), self.cellConfigurators[targetSection].count)
         

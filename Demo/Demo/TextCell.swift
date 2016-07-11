@@ -38,7 +38,7 @@ class TextCell: UITableViewCell {
 
 }
 
-extension TextCell: Updatable {
+extension TextCell: DDUpdatable {
     typealias ViewData = TextCellViewData
     func updateWithViewData(viewData: ViewData) {
         self.label.text = viewData.text

@@ -8,14 +8,13 @@
 
 import UIKit
 
-
-public protocol Updatable {
+public protocol DDUpdatable {
     associatedtype ViewData
     func updateWithViewData(viewData: ViewData)
     static func heightWithViewData(viewData: ViewData) -> CGFloat
 }
 
-public protocol CellConfiguratorType {
+public protocol DDCellConfiguratorType {
     var reuseIdentifier: String { get }
     var cellClass: AnyClass { get }
     var height:CGFloat { mutating get }
@@ -23,12 +22,10 @@ public protocol CellConfiguratorType {
     var initFromNib:Bool { get set }
 }
 
-public struct CellConfigurator<Cell where Cell: Updatable, Cell: UITableViewCell>: CellConfiguratorType{
+public struct DDCellConfigurator<Cell where Cell: DDUpdatable, Cell: UITableViewCell>: DDCellConfiguratorType {
     public let reuseIdentifier: String = NSStringFromClass(Cell)
     public let cellClass: AnyClass = Cell.self
-    var viewData: Cell.ViewData
-    public var initFromNib: Bool
-    
+
     // Height
     private var cachedHeight: CGFloat?
     public var height: CGFloat {
@@ -42,14 +39,17 @@ public struct CellConfigurator<Cell where Cell: Updatable, Cell: UITableViewCell
             }
         }
     }
-    
+
+    public var viewData: Cell.ViewData
+    public var initFromNib: Bool
+
     public func updateCell(cell: UITableViewCell) {
         if let cell = cell as? Cell {
             cell.updateWithViewData(viewData)
         }
     }
 
-    public init(viewData: Cell.ViewData, initFromNib: Bool) {
+    public init(viewData: Cell.ViewData, initFromNib: Bool = false) {
         self.viewData = viewData
         self.initFromNib = initFromNib
     }
