@@ -9,7 +9,7 @@
 import UIKit
 
 
-public protocol Updatable {
+public protocol DDUpdatable {
     associatedtype ViewData
     func updateWithViewData(viewData: ViewData)
     static func heightWithViewData(viewData: ViewData) -> CGFloat
@@ -23,10 +23,10 @@ public protocol CellConfiguratorType {
     var initFromNib:Bool { get set }
 }
 
-public struct CellConfigurator<Cell where Cell: Updatable, Cell: UITableViewCell>: CellConfiguratorType{
+public struct CellConfigurator<Cell where Cell: DDUpdatable, Cell: UITableViewCell>: CellConfiguratorType{
     public let reuseIdentifier: String = NSStringFromClass(Cell)
     public let cellClass: AnyClass = Cell.self
-    var viewData: Cell.ViewData
+    public var viewData: Cell.ViewData
     public var initFromNib: Bool
     
     // Height
