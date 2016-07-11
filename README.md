@@ -11,17 +11,17 @@ Here is how you initialize a full feature UITableView
 ```swift
 import DDTableViewController
 
-let cellConfigurators:[Array<CellConfiguratorType>] = [
+let cellConfigurators:[Array<DDCellConfiguratorType>] = [
     // section 0
     [
         // section 0 row 0
-        CellConfigurator<ImageCell>(viewData: ImageCellViewData(image: UIImage(named: "sample.png")!), initFromNib: false),
+        DDCellConfigurator<ImageCell>(viewData: ImageCellViewData(image: UIImage(named: "sample.png")!), initFromNib: false),
         // section 0 row 1
-        CellConfigurator<TextCell>(viewData: TextCellViewData(text: "Hello World"), initFromNib: false)
+        DDCellConfigurator<TextCell>(viewData: TextCellViewData(text: "Hello World"), initFromNib: false)
     ],
     //section 1
     [
-        CellConfigurator<ImageCell>(viewData: ImageCellViewData(image: UIImage(named: "sample2.png")!), initFromNib: false)
+        DDCellConfigurator<ImageCell>(viewData: ImageCellViewData(image: UIImage(named: "sample2.png")!), initFromNib: false)
     ]
     // ...
 ]
