@@ -15,10 +15,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        DDCellConfigurator<TextCell>(viewData: TextCellViewData(text: "xx"))
-        
-        let cellConfigurators:[Array<CellConfiguratorType>] = [
+                
+        let cellConfigurators:[Array<DDCellConfiguratorType>] = [
             // section 0
             [
                 // section 0 row 0
@@ -49,7 +47,7 @@ class ViewController: UIViewController {
     }
     @IBAction func didPressAddCell(sender: AnyObject) {
 //        let imageCellViewData = ImageCellViewData(image: UIImage(named: "sample.png")!)
-        let configurator = CellConfigurator<TextCell>(viewData: TextCellViewData(text: "Hello World"), initFromNib: false)
+        let configurator = DDCellConfigurator<TextCell>(viewData: TextCellViewData(text: "Hello World"), initFromNib: false)
         self.tableVC.insertCellAtIndexPath(indexPath: NSIndexPath(forRow: 0, inSection: 0), withCellConfigurator: configurator, RowAnimation: .Fade)
         
         

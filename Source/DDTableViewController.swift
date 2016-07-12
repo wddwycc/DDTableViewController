@@ -24,7 +24,7 @@ public class DDTableViewController: UITableViewController {
     }
     
     public var clickHandler: ((indexPath: NSIndexPath, configurator: DDCellConfiguratorType)->())?
-    
+
     // MARK: Public
     public init(cellConfigurators:[Array<DDCellConfiguratorType>]){
         super.init(style: UITableViewStyle.Plain)
