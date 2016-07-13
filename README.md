@@ -71,7 +71,7 @@ pod 'DDTableViewController'
 #### Carthage
 
 ```sh
-git "https://github.com/wddwycc/DDTableViewController" "master"
+git "wddwycc/DDTableViewController" "master"
 ```
 
 #### Manual

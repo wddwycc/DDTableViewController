@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0760952C1D33390900B4E528 /* DDUpdatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CFD7641D33334C00F118C1 /* DDUpdatable.swift */; };
+		078F3B4C1D361B8B00A841E5 /* DDLoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078F3B4B1D361B8B00A841E5 /* DDLoadingCell.swift */; };
 		07B377FF1D2E190A00583968 /* DDTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 07B377FE1D2E190A00583968 /* DDTableViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		07B378031D2E190A00583968 /* DDTableViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07B377FC1D2E190A00583968 /* DDTableViewController.framework */; };
 		07B378041D2E190A00583968 /* DDTableViewController.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 07B377FC1D2E190A00583968 /* DDTableViewController.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -49,6 +50,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		078F3B4B1D361B8B00A841E5 /* DDLoadingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DDLoadingCell.swift; path = ../Source/DDLoadingCell.swift; sourceTree = "<group>"; };
 		07B377FC1D2E190A00583968 /* DDTableViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DDTableViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		07B377FE1D2E190A00583968 /* DDTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDTableViewController.h; sourceTree = "<group>"; };
 		07B378001D2E190A00583968 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 		84A36E801CC5331F00A855FB /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				078F3B4B1D361B8B00A841E5 /* DDLoadingCell.swift */,
 				07CFD7641D33334C00F118C1 /* DDUpdatable.swift */,
 				84A36E781CC52CB900A855FB /* DDTableViewController.swift */,
 			);
@@ -261,6 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				078F3B4C1D361B8B00A841E5 /* DDLoadingCell.swift in Sources */,
 				84A36E691CC52C8000A855FB /* ViewController.swift in Sources */,
 				84A36E671CC52C8000A855FB /* AppDelegate.swift in Sources */,
 				84A36E7F1CC5331600A855FB /* ImageCell.swift in Sources */,
