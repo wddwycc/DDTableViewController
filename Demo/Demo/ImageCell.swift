@@ -24,7 +24,7 @@ class ImageCell: UITableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        self.mainImageView.frame = CGRectMake(0, 0, 340, 200)
+        self.mainImageView.frame = CGRectMake(24, 20, 160, 160)
         self.mainImageView.clipsToBounds = true
         self.mainImageView.contentMode = UIViewContentMode.ScaleAspectFit
         self.contentView.addSubview(self.mainImageView)
@@ -45,7 +45,7 @@ class ImageCell: UITableViewCell {
 extension ImageCell: DDUpdatable {
     typealias ViewData = ImageCellViewData
     func updateWithViewData(viewData: ViewData) {
-        self.imageView!.image = viewData.image
+        self.mainImageView.image = viewData.image
     }
     static func heightWithViewData(viewData: ViewData) -> CGFloat {
         return 200
