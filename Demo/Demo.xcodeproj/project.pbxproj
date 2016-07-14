@@ -14,6 +14,7 @@
 		07B378041D2E190A00583968 /* DDTableViewController.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 07B377FC1D2E190A00583968 /* DDTableViewController.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		07B3780A1D2E191500583968 /* DDTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A36E781CC52CB900A855FB /* DDTableViewController.swift */; };
 		07CFD7651D33334C00F118C1 /* DDUpdatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CFD7641D33334C00F118C1 /* DDUpdatable.swift */; };
+		07DEB7AD1D37937C00CA2322 /* DDLoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078F3B4B1D361B8B00A841E5 /* DDLoadingCell.swift */; };
 		84A36E671CC52C8000A855FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A36E661CC52C8000A855FB /* AppDelegate.swift */; };
 		84A36E691CC52C8000A855FB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A36E681CC52C8000A855FB /* ViewController.swift */; };
 		84A36E6C1CC52C8000A855FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A36E6A1CC52C8000A855FB /* Main.storyboard */; };
@@ -256,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0760952C1D33390900B4E528 /* DDUpdatable.swift in Sources */,
+				07DEB7AD1D37937C00CA2322 /* DDLoadingCell.swift in Sources */,
 				07B3780A1D2E191500583968 /* DDTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

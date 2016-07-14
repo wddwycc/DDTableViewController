@@ -82,8 +82,6 @@ class ViewController: UIViewController {
     @IBAction func didPressAddCell(sender: AnyObject) {
         let configurator = DDCellConfigurator<TextCell>(viewData: TextCellViewData(text: "Hello World"), initFromNib: false)
         self.tableVC.insertCellAtBottomWith(configurator, RowAnimation: .Fade)
-        self.tableVC.scrollToBottom(animated: true)
-        
     }
     @IBAction func didPressScrollToBottom(sender: AnyObject) {
         self.tableVC.scrollToBottom(animated: true)
@@ -91,10 +89,28 @@ class ViewController: UIViewController {
     @IBAction func didPressScrollToTop(sender: AnyObject) {
         self.tableVC.scrollToTop(animated: true)
     }
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        super.touchesBegan(touches, withEvent: event)
-        
+    @IBAction func didPressAddLoadingCell(sender: AnyObject) {
+        tableVC.addPullToLoad {
+            // here to mock web request time
+            delay(seconds: 1, completion: {
+                // here load more
+                for _ in 0 ... 10 {
+                    let configurator = DDCellConfigurator<TextCell>(viewData: TextCellViewData(text: "Hello World"), initFromNib: false)
+                    self.tableVC.cellConfigurators[1].append(configurator)
+                }
+                self.tableVC.tableView.reloadData()
+            })
+        }
     }
+}
 
+
+//simple delay function
+func delay(seconds seconds: Double, completion:()->()) {
+    let popTime = dispatch_time(DISPATCH_TIME_NOW, Int64( Double(NSEC_PER_SEC) * seconds ))
+    
+    dispatch_after(popTime, dispatch_get_main_queue()) {
+        completion()
+    }
 }
 

@@ -38,11 +38,20 @@
                                     <action selector="didPressScrollToBottom:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ar6-EJ-Gnk"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BCz-aT-XNj">
+                                <rect key="frame" x="113" y="562" width="108" height="30"/>
+                                <state key="normal" title="AddLoadingCell"/>
+                                <connections>
+                                    <action selector="didPressAddLoadingCell:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o9D-LY-Shu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="84m-kK-K1w" firstAttribute="centerY" secondItem="vtr-uG-mIR" secondAttribute="centerY" id="4Tj-6t-ovf"/>
+                            <constraint firstItem="vtr-uG-mIR" firstAttribute="leading" secondItem="BCz-aT-XNj" secondAttribute="trailing" constant="26" id="4s6-by-ew1"/>
                             <constraint firstItem="vtr-uG-mIR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6HY-KB-W15"/>
+                            <constraint firstItem="BCz-aT-XNj" firstAttribute="centerY" secondItem="vtr-uG-mIR" secondAttribute="centerY" id="Cg8-dS-hPy"/>
                             <constraint firstItem="QYe-rK-aXA" firstAttribute="centerX" secondItem="vtr-uG-mIR" secondAttribute="centerX" id="HOY-rp-DvI"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="vtr-uG-mIR" secondAttribute="bottom" constant="8" id="gqD-oH-VSH"/>
                             <constraint firstItem="vtr-uG-mIR" firstAttribute="top" secondItem="QYe-rK-aXA" secondAttribute="bottom" constant="8" id="l3G-Ur-9rZ"/>

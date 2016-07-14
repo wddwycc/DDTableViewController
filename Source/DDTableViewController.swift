@@ -27,6 +27,7 @@ public class DDTableViewController: UITableViewController {
     
     public typealias DDEventHandler = ((indexPath: NSIndexPath, configurator: DDCellConfiguratorType)->())
     public var clickHandler: DDEventHandler?
+    private var loadMoreHandler: (()->())?
 
     init() {
         super.init(style: UITableViewStyle.Plain)
@@ -39,15 +40,16 @@ public class DDTableViewController: UITableViewController {
         self.registerCells()
     }
 
-    public func addPullToLoad() {
-        
+    public func addPullToLoad(handler: ()->()) {
+        let configurator = DDCellConfigurator<DDLoadingCell>(viewData: DDLoadingCellViewData())
+        self.loadMoreHandler = handler
+        insertCellAtBottomWith(configurator, RowAnimation: .Fade)
     }
     
     /// Insert Cell
     public func insertCellAtIndexPath(indexPath indexPath:NSIndexPath, withCellConfigurator cellConfigurator:DDCellConfiguratorType, RowAnimation animation:UITableViewRowAnimation){
         let targetSection = min(max(indexPath.section, 0), self.cellConfigurators.count - 1)
         let targetRow = min(max(indexPath.row, 0), self.cellConfigurators[targetSection].count)
-        
         self.cellConfigurators[targetSection].insert(cellConfigurator, atIndex: targetRow)
         self.tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: targetRow, inSection: targetSection)], withRowAnimation: animation)
     }
@@ -67,7 +69,6 @@ public class DDTableViewController: UITableViewController {
     public func deleteCellAtIndexPath(indexPath indexPath:NSIndexPath, withRowAnimation animation:UITableViewRowAnimation){
         let targetSection = min(max(indexPath.section, 0), self.cellConfigurators.count - 1)
         let targetRow = min(max(indexPath.row, 0), self.cellConfigurators[targetSection].count - 1)
-        
         self.cellConfigurators[targetSection].removeAtIndex(targetRow)
         self.tableView.deleteRowsAtIndexPaths([NSIndexPath(forRow: targetRow, inSection: targetSection)], withRowAnimation: animation)
     }
@@ -126,6 +127,20 @@ extension DDTableViewController {
         clickHandler?(indexPath: indexPath, configurator: self.cellConfigurators[indexPath.section][indexPath.row])
     }
 
+    public override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        if cell is DDLoadingCell {
+            for j in 0 ..< cellConfigurators.count {
+                for k in 0 ..< cellConfigurators[j].count {
+                    if cellConfigurators[j][k] is DDCellConfigurator<DDLoadingCell> {
+                        cellConfigurators[j].removeAtIndex(k)
+                    }
+                }
+            }
+            self.loadMoreHandler?()
+            self.loadMoreHandler = nil
+        }
+    }
+    
     public override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section > headerConfigurators.count - 1 { return nil }
         return headerConfigurators[section].title
