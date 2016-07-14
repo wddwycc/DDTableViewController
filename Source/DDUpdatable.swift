@@ -54,3 +54,19 @@ public struct DDCellConfigurator<Cell where Cell: DDUpdatable, Cell: UITableView
         self.initFromNib = initFromNib
     }
 }
+
+public struct DDHeaderFooterConfigurator {
+    let title: String?
+    let height: CGFloat
+    let view: UIView?
+
+    init(title: String?, height: CGFloat = 22, view: UIView?) {
+        self.title = title
+        self.height = height
+        self.view = view
+    }
+
+    static func emptyConfigurator() -> DDHeaderFooterConfigurator {
+        return DDHeaderFooterConfigurator(title: nil, view: nil)
+    }
+}

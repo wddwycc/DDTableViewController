@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    var tableVC:DDTableViewController! = nil
+    var tableVC:DDTableViewController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +22,7 @@ class ViewController: UIViewController {
                 // section 0 row 0
                 DDCellConfigurator<ImageCell>(viewData: ImageCellViewData(image: UIImage(named: "sample.png")!), initFromNib: false),
                 // section 0 row 1
-//                CellConfigurator<TextCell>(viewData: TextCellViewData(text: "Hello World"), initFromNib: false)
+                DDCellConfigurator<TextCell>(viewData: TextCellViewData(text: "Hello World"), initFromNib: false)
             ],
             //section 1
             [
@@ -31,9 +31,32 @@ class ViewController: UIViewController {
             // ...
         ]
         self.tableVC = DDTableViewController(cellConfigurators: cellConfigurators)
+        self.tableVC.headerConfigurators = {
+            let configurators = [
+                DDHeaderFooterConfigurator(title: "I am usual header", view: nil),
+                DDHeaderFooterConfigurator(title: nil, view: nil)
+            ]
+            return configurators
+        }()
+        self.tableVC.footerConfigurators = {
+            let footerHeight: CGFloat = 40
+            let view = UIView()
+            view.frame = CGRect(x: 0, y: 0, width: 0, height: footerHeight)
+            view.backgroundColor = UIColor.greenColor()
+            let label = UILabel()
+            label.frame = CGRect(x: 0, y: 0, width: 300, height: footerHeight)
+            label.text = "I am custimized footer"
+            view.addSubview(label)
+            let configurator = DDHeaderFooterConfigurator(title: nil, height: footerHeight, view: view)
+            let footerConfigurators = [
+                DDHeaderFooterConfigurator.emptyConfigurator(),
+                configurator
+            ]
+            return footerConfigurators
+        }()
         self.addChildViewController(tableVC)
         self.view.addSubview(tableVC.view)
-        tableVC.view.frame = CGRectMake(0, 0, self.view.bounds.width, 300)
+        tableVC.view.frame = CGRectMake(0, 20, self.view.bounds.width, self.view.bounds.height - 120)
         tableVC.didMoveToParentViewController(self)
         
         

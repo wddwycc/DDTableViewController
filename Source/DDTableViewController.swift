@@ -22,6 +22,8 @@ public class DDTableViewController: UITableViewController {
             self.registerCells()
         }
     }
+    public var headerConfigurators = [DDHeaderFooterConfigurator]()
+    public var footerConfigurators = [DDHeaderFooterConfigurator]()
     
     public var clickHandler: ((indexPath: NSIndexPath, configurator: DDCellConfiguratorType)->())?
 
@@ -88,7 +90,7 @@ public class DDTableViewController: UITableViewController {
 
 
 // MARK: Configurate TableView
-extension DDTableViewController{
+extension DDTableViewController {
     override public func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return self.cellConfigurators.count
     }
@@ -107,5 +109,33 @@ extension DDTableViewController{
     }
     public override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         clickHandler?(indexPath: indexPath, configurator: self.cellConfigurators[indexPath.section][indexPath.row])
+    }
+
+    public override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section > headerConfigurators.count - 1 { return nil }
+        return headerConfigurators[section].title
+    }
+    public override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if section > headerConfigurators.count - 1 { return nil }
+        return headerConfigurators[section].view
+    }
+    public override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section > headerConfigurators.count - 1 { return 0 }
+        if headerConfigurators[section].title == nil && headerConfigurators[section].view == nil { return 0 }
+        return headerConfigurators[section].height
+    }
+    public override func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        if section > footerConfigurators.count - 1 { return nil }
+        return footerConfigurators[section].title
+    }
+    public override func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        if section > footerConfigurators.count - 1 { return nil }
+        return footerConfigurators[section].view
+    }
+    public override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        if section > footerConfigurators.count - 1 { return 0 }
+        if footerConfigurators[section].title == nil && footerConfigurators[section].view == nil { return 0 }
+        return footerConfigurators[section].height
+
     }
 }
