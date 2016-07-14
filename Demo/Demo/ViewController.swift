@@ -80,10 +80,9 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     @IBAction func didPressAddCell(sender: AnyObject) {
-//        let imageCellViewData = ImageCellViewData(image: UIImage(named: "sample.png")!)
         let configurator = DDCellConfigurator<TextCell>(viewData: TextCellViewData(text: "Hello World"), initFromNib: false)
-        self.tableVC.insertCellAtIndexPath(indexPath: NSIndexPath(forRow: 0, inSection: 0), withCellConfigurator: configurator, RowAnimation: .Fade)
-        
+        self.tableVC.insertCellAtBottomWith(configurator, RowAnimation: .Fade)
+        self.tableVC.scrollToBottom(animated: true)
         
     }
     @IBAction func didPressScrollToBottom(sender: AnyObject) {

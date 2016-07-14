@@ -28,17 +28,20 @@ public class DDTableViewController: UITableViewController {
     public typealias DDEventHandler = ((indexPath: NSIndexPath, configurator: DDCellConfiguratorType)->())
     public var clickHandler: DDEventHandler?
 
+    init() {
+        super.init(style: UITableViewStyle.Plain)
+    }
+
     // MARK: Public
     public init(cellConfigurators:[Array<DDCellConfiguratorType>]){
         super.init(style: UITableViewStyle.Plain)
         self.cellConfigurators = cellConfigurators
         self.registerCells()
     }
-    
-    init() {
-        super.init(style: UITableViewStyle.Plain)
+
+    public func addPullToLoad() {
+        
     }
-    
     
     /// Insert Cell
     public func insertCellAtIndexPath(indexPath indexPath:NSIndexPath, withCellConfigurator cellConfigurator:DDCellConfiguratorType, RowAnimation animation:UITableViewRowAnimation){
@@ -47,6 +50,18 @@ public class DDTableViewController: UITableViewController {
         
         self.cellConfigurators[targetSection].insert(cellConfigurator, atIndex: targetRow)
         self.tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: targetRow, inSection: targetSection)], withRowAnimation: animation)
+    }
+
+    public func insertCellAtBottomWith(cellConfigurator:DDCellConfiguratorType, RowAnimation animation:UITableViewRowAnimation) {
+        let maxSectionIndex = cellConfigurators.count - 1
+        let maxRowIndexPlusOne = cellConfigurators[maxSectionIndex].count
+        let indexPath = NSIndexPath(forRow: maxRowIndexPlusOne, inSection: maxSectionIndex)
+        insertCellAtIndexPath(indexPath: indexPath, withCellConfigurator: cellConfigurator, RowAnimation: animation)
+    }
+
+    public func insertCellAtTopWith(cellConfigurator:DDCellConfiguratorType, RowAnimation animation:UITableViewRowAnimation) {
+        let indexPath = NSIndexPath(forRow: 0, inSection: 0)
+        insertCellAtIndexPath(indexPath: indexPath, withCellConfigurator: cellConfigurator, RowAnimation: animation)
     }
     /// Delete Cell
     public func deleteCellAtIndexPath(indexPath indexPath:NSIndexPath, withRowAnimation animation:UITableViewRowAnimation){

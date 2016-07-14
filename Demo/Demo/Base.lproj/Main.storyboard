@@ -17,13 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vtr-uG-mIR">
-                                <rect key="frame" x="247" y="562" width="106" height="30"/>
-                                <state key="normal" title="ScrollToBottom"/>
-                                <connections>
-                                    <action selector="didPressScrollToBottom:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ar6-EJ-Gnk"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QYe-rK-aXA">
                                 <rect key="frame" x="271" y="524" width="58" height="30"/>
                                 <state key="normal" title="Add Cell"/>
@@ -36,6 +29,13 @@
                                 <state key="normal" title="ScrollToTop"/>
                                 <connections>
                                     <action selector="didPressScrollToTop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cZM-In-X2b"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vtr-uG-mIR">
+                                <rect key="frame" x="247" y="562" width="106" height="30"/>
+                                <state key="normal" title="ScrollToBottom"/>
+                                <connections>
+                                    <action selector="didPressScrollToBottom:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ar6-EJ-Gnk"/>
                                 </connections>
                             </button>
                         </subviews>
