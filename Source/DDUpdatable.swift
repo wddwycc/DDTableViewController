@@ -60,7 +60,7 @@ public struct DDHeaderFooterConfigurator {
     let height: CGFloat
     let view: UIView?
 
-    init(title: String?, height: CGFloat = 22, view: UIView?) {
+    init(title: String?, height: CGFloat = 22, view: UIView? = nil) {
         self.title = title
         self.height = height
         self.view = view

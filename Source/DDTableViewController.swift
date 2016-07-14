@@ -25,7 +25,8 @@ public class DDTableViewController: UITableViewController {
     public var headerConfigurators = [DDHeaderFooterConfigurator]()
     public var footerConfigurators = [DDHeaderFooterConfigurator]()
     
-    public var clickHandler: ((indexPath: NSIndexPath, configurator: DDCellConfiguratorType)->())?
+    public typealias DDEventHandler = ((indexPath: NSIndexPath, configurator: DDCellConfiguratorType)->())
+    public var clickHandler: DDEventHandler?
 
     // MARK: Public
     public init(cellConfigurators:[Array<DDCellConfiguratorType>]){

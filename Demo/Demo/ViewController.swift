@@ -36,8 +36,8 @@ class ViewController: UIViewController {
         self.tableVC = DDTableViewController(cellConfigurators: cellConfigurators)
         self.tableVC.headerConfigurators = {
             let configurators = [
-                DDHeaderFooterConfigurator(title: "I am usual header", view: nil),
-                DDHeaderFooterConfigurator(title: nil, view: nil)
+                DDHeaderFooterConfigurator(title: "I am usual header"),
+                DDHeaderFooterConfigurator(title: "I am usual header 2")
             ]
             return configurators
         }()
@@ -61,7 +61,15 @@ class ViewController: UIViewController {
         self.view.addSubview(tableVC.view)
         tableVC.view.frame = CGRectMake(0, 20, self.view.bounds.width, self.view.bounds.height - 120)
         tableVC.didMoveToParentViewController(self)
-        
+
+        tableVC.clickHandler = { indexPath, configurator in
+            if let configurator = configurator as? DDCellConfigurator<ImageCell> {
+                print("You Got: \(configurator.cellClass) With: \(configurator.viewData)")
+            }
+            if let configurator = configurator as? DDCellConfigurator<TextCell> {
+                print("You Got: \(configurator.cellClass) With: \(configurator.viewData)")
+            }
+        }
         
         
         // Do any additional setup after loading the view, typically from a nib.

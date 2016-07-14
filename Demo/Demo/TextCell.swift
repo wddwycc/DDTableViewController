@@ -19,7 +19,7 @@ class TextCell: UITableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        self.label.frame = CGRectMake(0, 30, 200, 60)
+        self.label.frame = CGRectMake(30, 0, 200, 60)
         self.contentView.addSubview(self.label)
         
     }
