@@ -85,6 +85,8 @@ Drop files in `Source` folder into your project.
 ```swift
 func insertCellAtIndexPath(indexPath indexPath:NSIndexPath, withCellConfigurator cellConfigurator:CellConfiguratorType, RowAnimation animation:UITableViewRowAnimation)
 func deleteCellAtIndexPath(indexPath indexPath:NSIndexPath, withRowAnimation animation:UITableViewRowAnimation)
+func insertCellAtTopWith(cellConfigurator:DDCellConfiguratorType, RowAnimation animation:UITableViewRowAnimation) {
+func insertCellAtBottomWith(cellConfigurator:DDCellConfiguratorType, RowAnimation animation:UITableViewRowAnimation) {
 ```
 
 #### Reload Table

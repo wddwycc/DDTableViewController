@@ -51,16 +51,16 @@ public class DDTableViewController: UITableViewController {
         self.cellConfigurators[targetSection].insert(cellConfigurator, atIndex: targetRow)
         self.tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: targetRow, inSection: targetSection)], withRowAnimation: animation)
     }
-
+    /// Insert Cell at Top
+    public func insertCellAtTopWith(cellConfigurator:DDCellConfiguratorType, RowAnimation animation:UITableViewRowAnimation) {
+        let indexPath = NSIndexPath(forRow: 0, inSection: 0)
+        insertCellAtIndexPath(indexPath: indexPath, withCellConfigurator: cellConfigurator, RowAnimation: animation)
+    }
+    /// Insert Cell at Bottom
     public func insertCellAtBottomWith(cellConfigurator:DDCellConfiguratorType, RowAnimation animation:UITableViewRowAnimation) {
         let maxSectionIndex = cellConfigurators.count - 1
         let maxRowIndexPlusOne = cellConfigurators[maxSectionIndex].count
         let indexPath = NSIndexPath(forRow: maxRowIndexPlusOne, inSection: maxSectionIndex)
-        insertCellAtIndexPath(indexPath: indexPath, withCellConfigurator: cellConfigurator, RowAnimation: animation)
-    }
-
-    public func insertCellAtTopWith(cellConfigurator:DDCellConfiguratorType, RowAnimation animation:UITableViewRowAnimation) {
-        let indexPath = NSIndexPath(forRow: 0, inSection: 0)
         insertCellAtIndexPath(indexPath: indexPath, withCellConfigurator: cellConfigurator, RowAnimation: animation)
     }
     /// Delete Cell
@@ -71,7 +71,6 @@ public class DDTableViewController: UITableViewController {
         self.cellConfigurators[targetSection].removeAtIndex(targetRow)
         self.tableView.deleteRowsAtIndexPaths([NSIndexPath(forRow: targetRow, inSection: targetSection)], withRowAnimation: animation)
     }
-    
     /// Scroll To Bottom
     public func scrollToBottom(animated animated:Bool){
         if(self.cellConfigurators.count == 0){return}
